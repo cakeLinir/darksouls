@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Dark Souls – Kontakt</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/jpg" href="assets/Logo.jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark">
+
+<!-- Feuer-Effekte -->
+<div class="fire-particles"></div>
+<div class="fire-overlay"></div>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo-title">
+        <i class="fas fa-fire"></i>
+        The Dark Souls
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Start</a></li>
+        <li><a href="about.html"><i class="fas fa-users"></i> Über uns</a></li>
+        <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Kontakt</a></li>
+    </ul>
+</nav>
+
+<!-- Kontaktbereich -->
+<main>
+    <section class="contact-section glass-morphism">
+        <h2 class="glow-text"><i class="fas fa-envelope"></i>Kontakt</h2>
+        <div class="grid-2">
+            <!-- Kontaktinformationen -->
+            <div class="contact-info card animate-float">
+                <h3><i class="fas fa-comments"></i> Kontaktieren Sie uns</h3>
+                <p>Haben Sie Fragen? Wir sind für Sie da!</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:thedarksouls@verein.de">thedarksouls@verein.de</a></p>
+                    <p><i class="fas fa-location-dot"></i> Musterstraße 123, 12345 Musterstadt</p>
+                    <p><i class="fas fa-phone"></i> +49 123 456789</p>
+                </div>
+            </div>
+
+            <!-- Kontaktformular -->
+            <form class="contact-form card animate-float" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Betreff:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Nachricht senden</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="glass-morphism">
+  <p>
+    <i class="fas fa-copyright"></i>
+    2025 The Dark Souls. Alle Rechte vorbehalten.
+  </p>
+</footer>
+
+
+<!-- Feuer-Animationen -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fireContainer = document.createElement('div');
+        fireContainer.className = 'fire-container';
+        document.body.appendChild(fireContainer);
+
+        const flameBase = document.createElement('div');
+        flameBase.className = 'flame-base';
+        fireContainer.appendChild(flameBase);
+
+        for (let i = 0; i < 30; i++) {
+            const flame = document.createElement('div');
+            flame.className = 'flame';
+            flame.style.left = `${Math.random() * 100}%`;
+            flame.style.animationDelay = `${Math.random() * 2}s`;
+            flame.style.height = `${50 + Math.random() * 100}px`;
+            fireContainer.appendChild(flame);
+        }
+
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.left = `${Math.random() * 100}%`;
+            spark.style.setProperty('--x-offset', `${(Math.random() - 0.5) * 100}px`);
+            fireContainer.appendChild(spark);
+            spark.addEventListener('animationend', () => spark.remove());
+        }
+
+        function createSmoke() {
+            const smoke = document.createElement('div');
+            smoke.className = 'smoke';
+            smoke.style.left = `${Math.random() * 100}%`;
+            fireContainer.appendChild(smoke);
+            smoke.addEventListener('animationend', () => smoke.remove());
+        }
+
+        setInterval(createSpark, 50);
+        setInterval(createSmoke, 200);
+    });
+</script>
+</body>
+</html>

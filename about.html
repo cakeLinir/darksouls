@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/jpg" href="assets/Logo.jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <title>The Dark Souls – Über uns</title>
+</head>
+<body class="dark">
+
+<!-- Feuer-Partikel Container -->
+<div class="fire-particles"></div>
+<!-- Feuer Overlay -->
+<div class="fire-overlay"></div>
+
+<!-- 🔥 Navbar -->
+<nav>
+    <div class="logo-title">
+        <i class="fas fa-fire"></i>
+        The Dark Souls
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Start</a></li>
+        <li><a href="about.html" class="active"><i class="fas fa-users"></i> Über uns</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+    </ul>
+</nav>
+
+<!-- ℹ️ Über uns Bereich -->
+<main>
+    <section class="about-section glass-morphism">
+        <h2 class="glow-text">
+            <i class="fas fa-fire-alt"></i>
+            Über uns
+            <i class="fas fa-fire-alt"></i>
+        </h2>
+
+        <p class="intro-text">
+            <i class="fas fa-quote-left fire-quote"></i>
+            Wir sind <strong>The Dark Souls</strong> – ein leidenschaftliches Dart-Team mit Stil und Feuer.
+            Hier vereinen sich Präzision, Teamgeist und die Liebe zum Dartsport.
+            <i class="fas fa-quote-right fire-quote"></i>
+        </p>
+
+        <div class="team-info glass-morphism">
+            <article class="history-section">
+                <h3><i class="fas fa-history"></i> Unsere Geschichte</h3>
+                <p>
+                    Gegründet im Jahr 2020, haben wir uns zu einem der aktivsten Dart-Vereine
+                    der Region entwickelt. Unser Team besteht aus begeisterten Spielern aller
+                    Altersklassen und Spielstärken. Mit Leidenschaft und Engagement arbeiten
+                    wir kontinuierlich daran, uns zu verbessern und neue Mitglieder in unserer
+                    Dart-Familie willkommen zu heißen.
+                </p>
+            </article>
+
+            <article class="values-section">
+                <h3><i class="fas fa-star"></i> Unsere Werte</h3>
+                <ul class="values-list">
+                    <li><i class="fas fa-users"></i> <span>Teamgeist & Zusammenhalt</span></li>
+                    <li><i class="fas fa-handshake"></i> <span>Fairplay & Respekt</span></li>
+                    <li><i class="fas fa-smile"></i> <span>Spaß am Sport</span></li>
+                    <li><i class="fas fa-chart-line"></i> <span>Ständige Weiterentwicklung</span></li>
+                    <li><i class="fas fa-trophy"></i> <span>Gemeinsame Erfolge feiern</span></li>
+                    <li><i class="fas fa-door-open"></i> <span>Offen für alle Interessierten</span></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+</main>
+
+<!-- 🔻 Footer -->
+<footer class="glass-morphism">
+  <p>
+    <i class="fas fa-copyright"></i>
+    2025 The Dark Souls. Alle Rechte vorbehalten.
+  </p>
+</footer>
+
+
+<!-- 🔥 JavaScript: Feuerpartikel -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fireContainer = document.createElement('div');
+        fireContainer.className = 'fire-container';
+        document.body.appendChild(fireContainer);
+
+        const flameBase = document.createElement('div');
+        flameBase.className = 'flame-base';
+        fireContainer.appendChild(flameBase);
+
+        for (let i = 0; i < 30; i++) {
+            const flame = document.createElement('div');
+            flame.className = 'flame';
+            flame.style.left = `${Math.random() * 100}%`;
+            flame.style.animationDelay = `${Math.random() * 2}s`;
+            flame.style.height = `${50 + Math.random() * 100}px`;
+            fireContainer.appendChild(flame);
+        }
+
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.left = `${Math.random() * 100}%`;
+            spark.style.setProperty('--x-offset', `${(Math.random() - 0.5) * 100}px`);
+            fireContainer.appendChild(spark);
+            spark.addEventListener('animationend', () => spark.remove());
+        }
+
+        function createSmoke() {
+            const smoke = document.createElement('div');
+            smoke.className = 'smoke';
+            smoke.style.left = `${Math.random() * 100}%`;
+            fireContainer.appendChild(smoke);
+            smoke.addEventListener('animationend', () => smoke.remove());
+        }
+
+        setInterval(createSpark, 50);
+        setInterval(createSmoke, 200);
+    });
+</script>
+</body>
+</html>

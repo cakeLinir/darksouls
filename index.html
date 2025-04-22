@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Dark Souls</title>
+    <link rel="icon" type="image/jpg" href="assets/Logo.jpg"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark">
+<div class="fire-particles"></div>
+<div class="fire-overlay"></div>
+
+<nav class="container">
+    <div class="logo-title">
+        <i class="fas fa-fire"></i>
+        The Dark Souls
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Start</a></li>
+        <li><a href="about.html"><i class="fas fa-users"></i> Über uns</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+    </ul>
+</nav>
+
+<header id="home" class="glass-morphism container">
+    <img src="assets/Logo.gif" alt="The Dark Souls Logo" class="logo flame-border"/>
+    <h1 class="glow-text">The Dark Souls</h1>
+    <p class="subtitle">
+        <i class="fas fa-fire-alt"></i>
+        Willkommen auf der offiziellen Vereinsseite
+        <i class="fas fa-fire-alt"></i>
+    </p>
+</header>
+
+<main class="container">
+    <section class="features glass-morphism">
+        <h2 class="glow-text">Unser Verein</h2>
+        <div class="feature-grid grid-2">
+            <div class="feature-item card animate-float">
+                <i class="fas fa-bullseye feature-icon"></i>
+                <h3>Unser Trainingsplatz</h3>
+                <link> <p>Unsere Stammspielstätte ist das MGM<br>ab 19:00 Uhr</p>
+            </div>
+            <div class="feature-item card animate-float">
+                <i class="fas fa-trophy feature-icon"></i>
+                <h3>Liga-Spiele</h3>
+                <p>Teilnahme an der regionalen Dart-Liga</p>
+            </div>
+            <div class="feature-item card animate-float">
+                <i class="fas fa-calendar-alt feature-icon"></i>
+                <h3>Events</h3>
+                <p>Regelmäßige Turniere und gesellige Abende</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news glass-morphism">
+        <h2 class="glow-text">Aktuelle News</h2>
+        <div class="news-container">
+            <article class="news-item card animate-float">
+                <i class="fas fa-newspaper news-icon"></i>
+                <h3>Nächstes Turnier</h3>
+                <p>Am 15. Mai findet unser Frühjahrsturnier statt. Alle Mitglieder sind herzlich eingeladen!</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="glass-morphism">
+    <p>
+        <i class="fas fa-copyright"></i>
+        2025 The Dark Souls. Alle Rechte vorbehalten.
+    </p>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fireContainer = document.createElement('div');
+        fireContainer.className = 'fire-container';
+        document.body.appendChild(fireContainer);
+
+        const flameBase = document.createElement('div');
+        flameBase.className = 'flame-base';
+        fireContainer.appendChild(flameBase);
+
+        for (let i = 0; i < 30; i++) {
+            const flame = document.createElement('div');
+            flame.className = 'flame';
+            flame.style.left = `${Math.random() * 100}%`;
+            flame.style.animationDelay = `${Math.random() * 2}s`;
+            flame.style.height = `${50 + Math.random() * 100}px`;
+            fireContainer.appendChild(flame);
+        }
+
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.left = `${Math.random() * 100}%`;
+            spark.style.setProperty('--x-offset', `${(Math.random() - 0.5) * 100}px`);
+            fireContainer.appendChild(spark);
+            spark.addEventListener('animationend', () => spark.remove());
+        }
+
+        function createSmoke() {
+            const smoke = document.createElement('div');
+            smoke.className = 'smoke';
+            smoke.style.left = `${Math.random() * 100}%`;
+            fireContainer.appendChild(smoke);
+            smoke.addEventListener('animationend', () => smoke.remove());
+        }
+
+        setInterval(createSpark, 50);
+        setInterval(createSmoke, 200);
+    });
+</script>
+</body>
+</html>

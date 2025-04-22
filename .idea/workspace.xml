@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68849e39-479c-4aa2-8de4-978ef85b37b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Logo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +70,10 @@
       <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls\dartverein-website\src\components\EventsManager.js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls" />
+      <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls\about" />
+      <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls\contact" />
+      <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls\the-dark-souls" />
       <recent name="C:\Users\nauar\OneDrive\Desktop\darksouls\assets" />
     </key>
   </component>
@@ -95,7 +94,7 @@
       <updated>1743945272759</updated>
       <workItem from="1743945273803" duration="17415000" />
       <workItem from="1745314114685" duration="1934000" />
-      <workItem from="1745316188525" duration="7981000" />
+      <workItem from="1745316188525" duration="9701000" />
     </task>
     <servers />
   </component>
